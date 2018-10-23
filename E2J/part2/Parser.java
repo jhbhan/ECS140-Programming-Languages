@@ -48,6 +48,42 @@ public class Parser {
     }
 
     private void statement_list() {
+    	while(is(TK.STATEMENT)){
+    		statement();
+    	}
+    } 
+
+    private void statement(){
+
+    	while(is(TK.ASSIGN)){
+    		tkAssign();
+
+    	}
+    	while(is(TK.PRINT)){
+    		tkPrint();
+    	}
+    	while(is(TK.DO)){
+    		tkDo();
+    	}
+    	while(if(TK.IF)){
+    		tkIf();
+    	}
+    }
+    private void tkAssign(){
+    	mustbe(TK.ASSIGN);
+    }
+    private void tkPrint(){
+    	mustbe(TK.PRINT);
+    	scan();
+    	
+    }
+    private void tkDo(){
+    	mustbe(TK.DO);
+    	mustbe(TK.ENDDO);
+    }
+    private void tkIf(){
+    	mustbe(TK.IF);
+    	mustbe(TK.ENDIF);
     }
 
     // is current token what we want?
