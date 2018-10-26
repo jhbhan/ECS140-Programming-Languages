@@ -70,19 +70,34 @@ public class Parser {
     	}
     }
     private void tkAssign(){
+    	ref_id();
     	mustbe(TK.ASSIGN);
+    	//scan for term
     }
+
+    private void ref_id(){
+    	mustbe(TK.ASSIGN);
+    	mustbe(TK.ID);
+    	while(is(TK.REF_ID)){
+    		scan();
+    		mustbe(TK.ID);
+    	}
+    }
+
     private void tkPrint(){
     	mustbe(TK.PRINT);
     	scan();
+    	//scan for expression
     	
     }
     private void tkDo(){
     	mustbe(TK.DO);
+    	//scan for expression, must be TK.TEN, block
     	mustbe(TK.ENDDO);
     }
     private void tkIf(){
     	mustbe(TK.IF);
+    	//scan for expression, must be TK.TEN, block
     	mustbe(TK.ENDIF);
     }
 
