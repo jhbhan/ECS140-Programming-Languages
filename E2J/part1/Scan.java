@@ -94,7 +94,7 @@ public class Scan {
 			case '=':
 			return ccase1('=',TK.ASSIGN);
 			case '~':
-			return ccase1('~',TK.REF_ID);
+			return ccase1('~',TK.TILDE);
 		    case EOF:
 			got_eof = true;
 			return new Token(TK.EOF,

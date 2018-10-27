@@ -48,57 +48,122 @@ public class Parser {
     }
 
     private void statement_list() {
-    	while(is(TK.STATEMENT)){
+    	while(isStatement()){
     		statement();
     	}
     } 
 
-    private void statement(){
-
-    	while(is(TK.ASSIGN)){
-    		tkAssign();
-
+    private boolean isStatement(){
+    	if((isAssignment() || is(TK.PRINT)) || (is(TK.DO) || is(TK.IF))){
+    		return true;
     	}
-    	while(is(TK.PRINT)){
-    		tkPrint();
-    	}
-    	while(is(TK.DO)){
-    		tkDo();
-    	}
-    	while(if(TK.IF)){
-    		tkIf();
-    	}
+    	else {return false;}
     }
+
+	private boolean isAssignment(){
+		if(is(TK.TILDE) || is(TK.ID)){
+			return true;
+		}
+		return false;
+	}
+
+    private void statement(){
+    	if(isAssignment()){
+    		tkAssign();
+    	}
+    	else if(is(TK.PRINT)){
+    		tkPrint();
+    	}else if(is(TK.DO)){
+    		tkDo();
+    	}else if(is(TK.IF)){
+    		tkIf();
+	    }else{
+	    	parse_error("asdf1");
+	    }
+    }
+
     private void tkAssign(){
     	ref_id();
     	mustbe(TK.ASSIGN);
-    	//scan for term
-    }
-
-    private void ref_id(){
-    	mustbe(TK.ASSIGN);
-    	mustbe(TK.ID);
-    	while(is(TK.REF_ID)){
-    		scan();
-    		mustbe(TK.ID);
-    	}
+    	expression();
     }
 
     private void tkPrint(){
     	mustbe(TK.PRINT);
-    	scan();
-    	//scan for expression
-    	
+    	expression();
     }
+
     private void tkDo(){
     	mustbe(TK.DO);
-    	//scan for expression, must be TK.TEN, block
+    	guarded_command();
     	mustbe(TK.ENDDO);
     }
+
     private void tkIf(){
     	mustbe(TK.IF);
-    	//scan for expression, must be TK.TEN, block
+    	guarded_command();
+    	while(is(TK.ELSEIF)){
+    		scan();
+    		guarded_command();
+    	}
+    	if(is(TK.ELSE)){
+    		scan();
+    		block();
+    	}
     	mustbe(TK.ENDIF);
+    }
+
+    private void expression(){
+    	term();
+    	while(is(TK.PLUS) || is(TK.MINUS)){
+    		scan();
+    		term();
+    	}
+    }
+
+    private void term(){
+    	factor();
+    	while(is(TK.TIMES) || is (TK.DIVIDE)){
+    		scan();
+    		factor();
+    	}
+    }
+
+    private void factor(){
+    	if(is(TK.LPAREN)){
+    		expression();
+    		mustbe(TK.RPAREN);
+    	}else if(isRef_id()){
+    		ref_id();
+    	}else if(is(TK.NUM)){
+    		scan();
+    	}else{
+    		parse_error("asdf");
+    	}
+    }
+
+    private boolean isRef_id(){
+    	if(is(TK.TILDE) || is(TK.ID)){
+    		return true;
+    	}
+    	else{return false;}
+    }
+
+    private void ref_id(){
+    	if(is(TK.TILDE)){
+    		scan();
+    		if(is(TK.NUM)){
+    			scan();
+    		}
+    	}
+    	mustbe(TK.ID);
+ 
+    }
+
+    private void guarded_command(){
+    	expression();
+    	mustbe(TK.THEN);
+    	block();
     }
 
     // is current token what we want?
