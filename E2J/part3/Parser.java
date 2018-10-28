@@ -1,4 +1,5 @@
 /* *** This file is given as part of the programming assignment. *** */
+import java.util.Hashtable;
 
 public class Parser {
 
@@ -10,7 +11,9 @@ public class Parser {
 	tok = scanner.scan();
     }
 
+    private SymbolsTable symbolsTable;
     private Scan scanner;
+
     Parser(Scan scanner) {
 	this.scanner = scanner;
 	scan();
@@ -40,9 +43,11 @@ public class Parser {
 
     private void declaration() {
 	mustbe(TK.DECLARE);
+	symbolsTable.insertSymbol(tok.string);//FIXMEEEE
 	mustbe(TK.ID);
 	while( is(TK.COMMA) ) {
 	    scan();
+	    symbolsTable.insertSymbol(tok.string);//FIXMEEE
 	    mustbe(TK.ID);
 	}
     }
