@@ -1,4 +1,5 @@
 import java.util.Hashtable;
+import java.util.Set;
 
 
 public class SymbolsTable{
@@ -6,12 +7,15 @@ public class SymbolsTable{
 	//symbolsTable.put("name of whatever", value) to input
 	//symbolsTable.get("name of whatever")
 
+
 	public void insertSymbol(String key){
 		if (isDeclared(key)){
 			//ERROR
 		}else{
 			symbolsTable.put(key,null);
 		}
+		
+		System.out.println(key);
 	}
 
 	public void insertSymbol(String key, String value){
