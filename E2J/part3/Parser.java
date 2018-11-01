@@ -10,7 +10,8 @@ public class Parser {
     private void scan() {
 	tok = scanner.scan();
     }
-    String temp;
+    Token temp;
+    Token temp2;
 
     SymbolsTable symbolsTable = new SymbolsTable();
     private Scan scanner;
@@ -44,12 +45,12 @@ public class Parser {
 
     private void declaration() {
 	mustbe(TK.DECLARE);
-	temp = tok.string;
+	temp = tok;
 	mustbe(TK.ID);
 	symbolsTable.insertSymbol(temp);
 	while(is(TK.COMMA)){
 	    scan();
-	    temp = tok.string;
+	    temp = tok;
 	    mustbe(TK.ID);
 	    symbolsTable.insertSymbol(temp);
 	}
@@ -92,9 +93,12 @@ public class Parser {
     }
 
     private void tkAssign(){
+    	temp = tok;
     	ref_id();
     	mustbe(TK.ASSIGN);
+    	temp2 = tok;
     	expression();
+    	symbolsTable.assignValue(temp.string,temp2.string);
     }
 
     private void tkPrint(){
@@ -158,10 +162,9 @@ public class Parser {
     }
 
     private void ref_id(){ 
-    	temp = tok.string;
+    	temp = tok;
     	if(!(symbolsTable.isDeclared(temp))){
-    		System.err.println(temp + " is an undeclared variable on line " + tok.lineNumber);
-			System.exit(1);    	
+    		 assignment_error();
 		};
         	if(is(TK.TILDE)){
     		scan();
@@ -198,5 +201,10 @@ public class Parser {
 	System.err.println( "can't parse: line "
 			    + tok.lineNumber + " " + msg );
 	System.exit(1);
+    }
+
+    private void assignment_error() {
+    	System.err.println(temp.string + " is an undeclared variable on line " + tok.lineNumber);
+		System.exit(1);
     }
 }

@@ -12,33 +12,30 @@ public class SymbolsTable{
 	String breakpoint = "BREAKPOINT";
 
 
-	public void insertSymbol(String key){
-		if (isDeclared(key)){
-			System.err.println("Cannot redeclare existing variable");
-			System.exit(1);
+	public void insertSymbol(Token tok){
+		if (isDeclared(tok)){
+			System.err.println("redeclaration of variable " + tok.string);
 		}else{
-			symbolsTable.put(key,null);
+			symbolsTable.put(tok.string,null);
 		}
-		Set<String> keys = this.symbolsTable.keySet();
-		for(String k:keys){
-            System.out.println(k+" -- "+this.symbolsTable.get(k));
-        }
+//		Set<String> keys = this.symbolsTable.keySet();
+//		for(String k:keys){
+//            System.out.println(k+" -- "+this.symbolsTable.get(k));
+//        }
 	}
 
 	public void assignValue(String key, String value){
-		if (isDeclared(key)){
-			valueChange(key, value);
-		}else{
-			System.err.println("Cannot assign undeclared variable");
-			System.exit(1);
-
-		}
+			symbolsTable.put(key, value);
+	//		Set<String> keys = this.symbolsTable.keySet();
+	//	for(String k:keys){
+    //        System.out.println(k+" -- "+this.symbolsTable.get(k));
+    //    }
 	}
 
 
-	public boolean isDeclared(String key){
-		if (key != null){
-		if(symbolsTable.containsKey(key)){
+	public boolean isDeclared(Token tok){
+		if (tok != null){
+		if(symbolsTable.containsKey(tok.string)){
 			return true;
 		}
 		else{
@@ -50,9 +47,6 @@ public class SymbolsTable{
 		}
 	}//if not declared and wanting to assign, or if declared and wants to declare again, error
 
-	public void valueChange(String key, String value){
-		symbolsTable.put(key, value);
-	}
 
 	public void newScope(){
 		scopeStack.push(breakpoint);

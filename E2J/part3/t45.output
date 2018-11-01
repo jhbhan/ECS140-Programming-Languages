@@ -1,0 +1,4 @@
+running e2j t45
+redeclaration of variable a
+redeclaration of variable a
+~ is an undeclared variable on line 11
