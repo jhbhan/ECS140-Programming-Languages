@@ -1,0 +1,11 @@
+running e2j t07
+Exception in thread "main" java.lang.NullPointerException
+	at Parser.mustbe(Parser.java:187)
+	at Parser.ref_id(Parser.java:166)
+	at Parser.tkAssign(Parser.java:94)
+	at Parser.statement(Parser.java:80)
+	at Parser.statement_list(Parser.java:59)
+	at Parser.block(Parser.java:33)
+	at Parser.program(Parser.java:28)
+	at Parser.<init>(Parser.java:22)
+	at e2j.main(e2j.java:5)

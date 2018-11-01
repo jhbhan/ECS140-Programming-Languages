@@ -10,12 +10,14 @@ public class Parser {
     private void scan() {
 	tok = scanner.scan();
     }
+    String temp;
 
     private SymbolsTable symbolsTable;
     private Scan scanner;
 
     Parser(Scan scanner) {
 	this.scanner = scanner;
+	this.symbolsTable = symbolsTable;
 	scan();
 	program();
 	if( tok.kind != TK.EOF )
@@ -43,11 +45,11 @@ public class Parser {
 
     private void declaration() {
 	mustbe(TK.DECLARE);
-	symbolsTable.insertSymbol(tok.string);//FIXMEEEE
+	temp = tok.string;
 	mustbe(TK.ID);
-	while( is(TK.COMMA) ) {
+	while(is(TK.COMMA)){
 	    scan();
-	    symbolsTable.insertSymbol(tok.string);//FIXMEEE
+	    temp = tok.string;
 	    mustbe(TK.ID);
 	}
     }

@@ -1,0 +1,9 @@
+running e2j t49
+Exception in thread "main" java.lang.NullPointerException
+	at Parser.mustbe(Parser.java:187)
+	at Parser.declaration(Parser.java:47)
+	at Parser.declaration_list(Parser.java:42)
+	at Parser.block(Parser.java:32)
+	at Parser.program(Parser.java:28)
+	at Parser.<init>(Parser.java:22)
+	at e2j.main(e2j.java:5)
