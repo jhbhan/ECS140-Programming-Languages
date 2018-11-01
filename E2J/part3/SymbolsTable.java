@@ -3,6 +3,7 @@ import java.util.Set;
 import java.util.Stack;
 
 public class SymbolsTable{
+	SymbolsTable(){}
 	LinkedHashMap<String,String> symbolsTable = new LinkedHashMap<String, String>();
 	//symbolsTable.put("name of whatever", value) to input
 	//symbolsTable.get("name of whatever")
@@ -18,8 +19,10 @@ public class SymbolsTable{
 		}else{
 			symbolsTable.put(key,null);
 		}
-		
-		System.out.println(key);
+		Set<String> keys = this.symbolsTable.keySet();
+		for(String k:keys){
+            System.out.println(k+" -- "+this.symbolsTable.get(k));
+        }
 	}
 
 	public void assignValue(String key, String value){
@@ -34,11 +37,16 @@ public class SymbolsTable{
 
 
 	public boolean isDeclared(String key){
-		if(symbolsTable.get(key) == null){
-			return false;
+		if (key != null){
+		if(symbolsTable.containsKey(key)){
+			return true;
 		}
 		else{
-			return true;
+			return false;
+		}}
+		else{
+			System.out.println("hi");
+			return false;
 		}
 	}//if not declared and wanting to assign, or if declared and wants to declare again, error
 

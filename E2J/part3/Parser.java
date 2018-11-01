@@ -12,12 +12,11 @@ public class Parser {
     }
     String temp;
 
-    private SymbolsTable symbolsTable;
+    SymbolsTable symbolsTable = new SymbolsTable();
     private Scan scanner;
 
     Parser(Scan scanner) {
 	this.scanner = scanner;
-	this.symbolsTable = symbolsTable;
 	scan();
 	program();
 	if( tok.kind != TK.EOF )
@@ -47,10 +46,12 @@ public class Parser {
 	mustbe(TK.DECLARE);
 	temp = tok.string;
 	mustbe(TK.ID);
+	symbolsTable.insertSymbol(temp);
 	while(is(TK.COMMA)){
 	    scan();
 	    temp = tok.string;
 	    mustbe(TK.ID);
+	    symbolsTable.insertSymbol(temp);
 	}
     }
 
@@ -157,6 +158,11 @@ public class Parser {
     }
 
     private void ref_id(){ 
+    	temp = tok.string;
+    	if(!(symbolsTable.isDeclared(temp))){
+    		System.err.println(temp + " is an undeclared variable on line " + tok.lineNumber);
+			System.exit(1);    	
+		};
         	if(is(TK.TILDE)){
     		scan();
     		if(is(TK.NUM)){
@@ -164,6 +170,7 @@ public class Parser {
     		}
     	}
     	mustbe(TK.ID);
+    	
     }
 
     private void guarded_command(){
