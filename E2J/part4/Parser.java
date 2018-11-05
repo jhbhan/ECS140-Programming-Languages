@@ -13,7 +13,6 @@ public class Parser {
     }
     Token temp;
     Token temp2;
-    String type;
 
     SymbolsTable symTable = new SymbolsTable();
     private Scan scanner;
@@ -113,13 +112,11 @@ public class Parser {
     private void tkAssign(){
     	ref_id();
     	mustbe(TK.ASSIGN);
-		System.out.println("=");
     	expression();
     }
 
     private void tkPrint(){
     	mustbe(TK.PRINT);
-		System.out.println("System.out.println(""");
     	expression();
     }
 
@@ -131,7 +128,6 @@ public class Parser {
 
     private void tkIf(){
     	mustbe(TK.IF);
-    	s
     	guarded_command();
     	while(is(TK.ELSEIF)){
     		scan();
@@ -149,12 +145,6 @@ public class Parser {
     private void expression(){
     	term();
     	while(is(TK.PLUS) || is(TK.MINUS)){
-    		if(is(TK.Plus)){
-				System.out.println("+");
-			}
-			else{
-				System.out.println("-");
-			}
     		scan();
     		term();
     	}
@@ -170,17 +160,13 @@ public class Parser {
 
     private void factor(){
     	if(is(TK.LPAREN)){
-    		System.out.println("(");
     		scan();
     		expression();
     		mustbe(TK.RPAREN);
-    		System.out.println(")");
     	}else if(isRef_id()){
     		ref_id();
     	}else{
-    		temp = tok;
     		mustbe(TK.NUM);
-			System.out.println(tok.string);
     	}
     }
 
