@@ -1,5 +1,6 @@
 /* *** This file is given as part of the programming assignment. *** */
 import java.util.Hashtable;
+import java.util.Stack;
 
 public class Parser {
 
@@ -13,7 +14,7 @@ public class Parser {
     Token temp;
     Token temp2;
 
-    SymbolsTable symbolsTable = new SymbolsTable();
+    SymbolsTable symTable = new SymbolsTable();
     private Scan scanner;
 
     Parser(Scan scanner) {
@@ -47,12 +48,12 @@ public class Parser {
 	mustbe(TK.DECLARE);
 	temp = tok;
 	mustbe(TK.ID);
-	symbolsTable.insertSymbol(temp);
+	symTable.insertSymbol(temp);
 	while(is(TK.COMMA)){
 	    scan();
 	    temp = tok;
 	    mustbe(TK.ID);
-	    symbolsTable.insertSymbol(temp);
+	    symTable.insertSymbol(temp);
 	}
     }
 
@@ -84,9 +85,25 @@ public class Parser {
     	else if(is(TK.PRINT)){
     		tkPrint();
     	}else if(is(TK.DO)){
+        //newScope
+        symTable.newScope();
+        System.out.println("Start of Scope --- Current Depth: " 
+                            + symTable.getScopeMarker());
     		tkDo();
+        symTable.endScope();
+        System.out.println("End of Scope --- Current Depth: " 
+                            + symTable.getScopeMarker() + "\n");
+        //endScope
     	}else if(is(TK.IF)){
+        //newScope
+        symTable.newScope();
+        System.out.println("Start of Scope --- Current Depth: " 
+                            + symTable.getScopeMarker());
     		tkIf();
+        symTable.endScope();
+        System.out.println("End of Scope --- Current Depth: "  
+                            + symTable.getScopeMarker() + "\n");
+        //endScope
 	    }else{
 	    	parse_error("asdf1");
 	    }
@@ -98,7 +115,7 @@ public class Parser {
     	mustbe(TK.ASSIGN);
     	temp2 = tok;
     	expression();
-    	symbolsTable.assignValue(temp.string,temp2.string);
+    	symTable.assignValue(temp.string,temp2.string);
     }
 
     private void tkPrint(){
@@ -163,17 +180,17 @@ public class Parser {
 
     private void ref_id(){ 
     	temp = tok;
-    	if(!(symbolsTable.isDeclared(temp))){
+    	if(!(symTable.isDeclared(temp))){
     		 assignment_error();
-		};
-        	if(is(TK.TILDE)){
+		  };
+
+      if(is(TK.TILDE)){
     		scan();
     		if(is(TK.NUM)){
     			scan();
     		}
     	}
     	mustbe(TK.ID);
-    	
     }
 
     private void guarded_command(){
