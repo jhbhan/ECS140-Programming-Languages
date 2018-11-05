@@ -1,6 +1,15 @@
 running e2j
 compiling the Java generated code
-My_e2j.java:1: error: class Mye2j is public, should be declared in a file named Mye2j.java
-public class Mye2j{
-       ^
-1 error
+My_e2j.java:3: error: illegal start of expression
+=
+^
+My_e2j.java:4: error: illegal start of expression
+=
+^
+My_e2j.java:5: error: unclosed string literal
+System.out.println"
+                  ^
+My_e2j.java:7: error: unclosed string literal
+"
+^
+4 errors
