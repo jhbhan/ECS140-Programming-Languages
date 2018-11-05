@@ -3,8 +3,36 @@
   <component name="ChangeListManager">
     <list default="true" id="fd295fca-059c-459c-a3ef-974cad3dc813" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/Parser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/E2J/part3/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/SymbolsTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/SymbolsTable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/E2J/part3/SymbolsTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/SymbolsTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/t06.output" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/t06.output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/t07.output" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/t07.output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/t09.output" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/t09.output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/t10.output" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/t10.output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/t11.output" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/t11.output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/t12.output" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/t12.output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/t14.output" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/t14.output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/t15.output" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/t15.output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/t16.output" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/t16.output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/t17.output" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/t17.output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/t18.output" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/t18.output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/t19.output" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/t19.output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/t20.output" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/t20.output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/t31.output" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/t31.output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/t32.output" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/t32.output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/t33.output" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/t33.output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/t37.output" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/t37.output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/t42.output" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/t42.output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/t43.output" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/t43.output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/t44.output" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/t44.output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/t45.output" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/t45.output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/t46.output" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/t46.output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/t47.output" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/t47.output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/t48.output" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/t48.output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part3/t49.output" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part3/t49.output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E2J/part4/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/E2J/part4/Parser.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,7 +44,7 @@
     <session id="1094685092">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.opened" value="3" />
@@ -24,22 +52,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="2" />
+          <entry key="java" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="2" />
+          <entry key="JAVA" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="245" />
+          <entry key="java" value="327" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="245" />
+          <entry key="JAVA" value="327" />
         </counts>
       </usages-collector>
     </session>
@@ -49,10 +77,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/E2J/part3/SymbolsTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+            <state relative-caret-position="120">
+              <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1206#1207#0" expanded="true" />
+                <element signature="e#1228#1229#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,13 +91,26 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/E2J/part3/Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="70" column="28" lean-forward="true" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
+            <state relative-caret-position="239">
+              <caret line="51" column="36" lean-forward="true" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
+              <folding>
+                <element signature="e#334#335#0" expanded="true" />
+                <element signature="e#361#362#0" expanded="true" />
+                <element signature="e#655#656#0" expanded="true" />
+                <element signature="e#669#670#0" expanded="true" />
+                <element signature="e#3687#3688#0" expanded="true" />
+                <element signature="e#3715#3716#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>system.out.print</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -75,6 +118,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/E2J/part4/Parser.java" />
         <option value="$PROJECT_DIR$/E2J/part3/SymbolsTable.java" />
         <option value="$PROJECT_DIR$/E2J/part3/Parser.java" />
       </list>
@@ -132,7 +176,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541442480905" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541443988441" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -159,18 +203,17 @@
       <updated>1541405169216</updated>
       <workItem from="1541405172044" duration="626000" />
       <workItem from="1541441619403" duration="7000" />
-      <workItem from="1541441628367" duration="849000" />
+      <workItem from="1541441628367" duration="2299000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1482000" />
+    <option name="totallyTimeSpent" value="2932000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="23" width="1400" height="776" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2569956" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2569956" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -199,6 +242,36 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2569956" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32894737" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -206,21 +279,54 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/E2J/part3/Parser.java</url>
+          <line>43</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/E2J/part4/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <folding>
+            <element signature="e#4949#4950#0" expanded="true" />
+            <element signature="e#4986#4987#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/E2J/part3/SymbolsTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        <state relative-caret-position="120">
+          <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1206#1207#0" expanded="true" />
+            <element signature="e#1228#1229#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/E2J/part3/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="70" column="28" lean-forward="true" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
+        <state relative-caret-position="239">
+          <caret line="51" column="36" lean-forward="true" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
+          <folding>
+            <element signature="e#334#335#0" expanded="true" />
+            <element signature="e#361#362#0" expanded="true" />
+            <element signature="e#655#656#0" expanded="true" />
+            <element signature="e#669#670#0" expanded="true" />
+            <element signature="e#3687#3688#0" expanded="true" />
+            <element signature="e#3715#3716#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

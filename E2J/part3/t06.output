@@ -1,2 +1,11 @@
 running e2j t06
-a is an undeclared variable on line 2
+Exception in thread "main" java.lang.NullPointerException
+	at SymbolsTable.locateVariable(SymbolsTable.java:56)
+	at Parser.ref_id(Parser.java:191)
+	at Parser.tkAssign(Parser.java:101)
+	at Parser.statement(Parser.java:84)
+	at Parser.statement_list(Parser.java:63)
+	at Parser.block(Parser.java:35)
+	at Parser.program(Parser.java:30)
+	at Parser.<init>(Parser.java:24)
+	at e2j.main(e2j.java:5)
