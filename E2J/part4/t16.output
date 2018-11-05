@@ -1,0 +1,10 @@
+running e2j
+redeclaration of variable a
+redeclaration of variable a
+redeclaration of variable a
+redeclaration of variable a
+compiling the Java generated code
+My_e2j.java:1: error: class Mye2j is public, should be declared in a file named Mye2j.java
+public class Mye2j{
+       ^
+1 error
