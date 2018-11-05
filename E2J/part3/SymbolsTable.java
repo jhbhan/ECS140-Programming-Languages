@@ -12,7 +12,12 @@ public class SymbolsTable{
 	Stack<String> scopeStack = new Stack<String>(); //scope stack
 
   private int scopeMarker = 0; // this determines the total nested blocks  
+<<<<<<< HEAD
   
+=======
+	String breakpoint = "BREAKPOINT"; // this determines if it is the end of a scope
+
+>>>>>>> d5a25626bf722ac4f67ebd6b72fdedfc477ef878
   public int getScopeMarker(){ return scopeMarker; } 
   //returns scopeMarker
 
