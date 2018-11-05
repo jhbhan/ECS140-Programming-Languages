@@ -110,12 +110,9 @@ public class Parser {
     }
 
     private void tkAssign(){
-    	temp = tok;
     	ref_id();
     	mustbe(TK.ASSIGN);
-    	temp2 = tok;
     	expression();
-    	symTable.assignValue(temp.string,temp2.string);
     }
 
     private void tkPrint(){
@@ -180,10 +177,7 @@ public class Parser {
 
     private void ref_id(){ 
     	temp = tok;
-    	if(!(symTable.isDeclared(temp))){
-    		 assignment_error();
-		  };
-
+        symTable.assignValue(tok.string);
       if(is(TK.TILDE)){
     		scan();
     		if(is(TK.NUM)){
