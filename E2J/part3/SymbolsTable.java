@@ -4,7 +4,7 @@ import java.util.Set;
 import java.util.Stack;
 
 public class SymbolsTable{
-	SymbolsTable(){
+	public SymbolsTable(){
 		stackOfTables = new Stack<>();
 		stackOfTables.push(new HashSet<>());
 		scopeMarker = 0;
@@ -56,6 +56,8 @@ public class SymbolsTable{
 		while(!stackOfTables.elementAt(scope).contains(tok.string)){
 			scope--;
 			if (scope < 0){
+				System.err.println(tok.string + " is an undeclared variable on line " + tok.lineNumber);
+				System.exit(1);
 				return false;
 			}
 		}
@@ -64,7 +66,15 @@ public class SymbolsTable{
 
 	//tilda id, global, just check scope 0
 	public boolean locateVariableGlobal(Token tok){
-		return stackOfTables.elementAt(0).contains(tok.string);
+
+		if (!stackOfTables.elementAt(0).contains(tok.string)) {
+			System.err.println("no such variable ~" + tok.string + " on line " + tok.lineNumber);
+                    System.exit(1);
+			return false;
+		} else {
+
+			return true;
+		}
 	}
 
 	// if ~0. current scope, if ~num: scopenumber scope
@@ -73,7 +83,15 @@ public class SymbolsTable{
 			return stackOfTables.elementAt(scopeMarker).contains(tok.string);
 		}
 		else{
-			return stackOfTables.elementAt(scope).contains(tok.string);
+			if (!stackOfTables.elementAt(scope).contains(tok.string)) {
+			System.err.println("no such variable ~" + scope + tok.string + " on line " + tok.lineNumber);
+                    System.exit(1);
+			return false;
+		} else {
+
+			return true;
+		}
+
 	}
 	}
 

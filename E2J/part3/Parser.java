@@ -179,16 +179,10 @@ public class Parser {
 
     private void ref_id(){ 
     int scope = -2;//-2 is special case for no scope
-    System.out.println(tok.string);
     if(is(TK.TILDE)){
             scope = -1;
     		scan();
     		if(is(TK.NUM)){
-                if((symTable.getScopeMarker() - Integer.parseInt(tok.string)) < 0){
-                    System.out.println("Break in ~#ID");
-                    System.err.println("no such variable ~" + tok.string + " on line " + tok.lineNumber);
-                    System.exit(1);
-                }
                 scope = Integer.parseInt(tok.string);
     			scan();
     		}
@@ -196,15 +190,20 @@ public class Parser {
         temp = tok;
 
     	mustbe(TK.ID);
-        System.out.println(scope);
+
+        if((symTable.getScopeMarker() - scope) < 0){
+                    System.err.println("no such variable ~"  + scope + temp.string + " on line " + temp.lineNumber);
+                    System.exit(1);
+                }
         if (scope == -1){//global check
-            symTable.locateVariableGlobal(tok);
+            symTable.locateVariableGlobal(temp);
         }else if (scope > -1){//scope number
-            symTable.locateVariable(tok, scope);
+            symTable.locateVariable(temp, scope);
         }else if (scope == -2){//closest nested
-            symTable.locateVariable(tok);
+            symTable.locateVariable(temp);
+        }else{
+           symTable.assignValue(temp);
         }
-        symTable.assignValue(tok);
     }
 
     private void guarded_command(){
