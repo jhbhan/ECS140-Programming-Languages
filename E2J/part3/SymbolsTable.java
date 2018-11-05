@@ -83,16 +83,14 @@ public class SymbolsTable{
 			return stackOfTables.elementAt(scopeMarker).contains(tok.string);
 		}
 		else{
-			if (!stackOfTables.elementAt(scope).contains(tok.string)) {
-			System.err.println("no such variable ~" + scope + tok.string + " on line " + tok.lineNumber);
-                    System.exit(1);
-			return false;
-		} else {
-
-			return true;
+			if (!stackOfTables.elementAt(scopeMarker - scope).contains(tok.string)) {
+				System.err.println("no such variable ~" + scope + tok.string + " on line " + tok.lineNumber);
+                System.exit(1);
+				return false;
+			} else {
+				return true;
+			}
 		}
-
-	}
 	}
 
 	//hash table hash<h,k>
