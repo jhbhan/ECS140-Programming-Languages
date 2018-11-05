@@ -4,7 +4,7 @@ import java.util.Set;
 import java.util.Stack;
 
 public class SymbolsTable{
-	public SymbolsTable();
+	public SymbolsTable(){
 		stackOfTables = new Stack<>();
 		stackOfTables.push(new HashSet<>());
 		scopeMarker = 0;
