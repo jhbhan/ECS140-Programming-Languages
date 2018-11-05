@@ -1,4 +1,3 @@
 running e2j t37
-redeclaration of variable a
-redeclaration of variable a
-redeclaration of variable a
+-2
+= is an undeclared variable on line 3

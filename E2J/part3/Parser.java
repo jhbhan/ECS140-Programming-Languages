@@ -86,23 +86,23 @@ public class Parser {
     		tkPrint();
     	}else if(is(TK.DO)){
         //newScope
-        symTable.newScope();
-        System.out.println("Start of Scope --- Current Depth: " 
-                            + symTable.getScopeMarker());
+ //       symTable.newScope();
+ //       System.out.println("Start of Scope --- Current Depth: " 
+ //                           + symTable.getScopeMarker());
     		tkDo();
-        symTable.endScope();
-        System.out.println("End of Scope --- Current Depth: " 
-                            + symTable.getScopeMarker() + "\n");
+ //       symTable.endScope();
+ //       System.out.println("End of Scope --- Current Depth: " 
+ //                           + symTable.getScopeMarker() + "\n");
         //endScope
     	}else if(is(TK.IF)){
         //newScope
-        symTable.newScope();
-        System.out.println("Start of Scope --- Current Depth: " 
-                            + symTable.getScopeMarker());
+  //      symTable.newScope();
+   //     System.out.println("Start of Scope --- Current Depth: " 
+    //                        + symTable.getScopeMarker());
     		tkIf();
-        symTable.endScope();
-        System.out.println("End of Scope --- Current Depth: "  
-                            + symTable.getScopeMarker() + "\n");
+    //    symTable.endScope();
+  //      System.out.println("End of Scope --- Current Depth: "  
+   //                         + symTable.getScopeMarker() + "\n");
         //endScope
 	    }else{
 	    	parse_error("asdf1");
@@ -135,7 +135,9 @@ public class Parser {
     	}
     	if(is(TK.ELSE)){
     		scan();
+            symTable.newScope();
     		block();
+            symTable.endScope();
     	}
     	mustbe(TK.ENDIF);
     }
@@ -176,21 +178,41 @@ public class Parser {
     }
 
     private void ref_id(){ 
-    	temp = tok;
-        symTable.assignValue(tok.string);
-      if(is(TK.TILDE)){
+    int scope = -2;//-2 is special case for no scope
+    System.out.println(tok.string);
+    if(is(TK.TILDE)){
+            scope = -1;
     		scan();
     		if(is(TK.NUM)){
+                if((symTable.getScopeMarker() - Integer.parseInt(tok.string)) < 0){
+                    System.out.println("Break in ~#ID");
+                    System.err.println("no such variable ~" + tok.string + " on line " + tok.lineNumber);
+                    System.exit(1);
+                }
+                scope = Integer.parseInt(tok.string);
     			scan();
     		}
     	}
+        temp = tok;
+
     	mustbe(TK.ID);
+        System.out.println(scope);
+        if (scope == -1){//global check
+            symTable.locateVariableGlobal(tok);
+        }else if (scope > -1){//scope number
+            symTable.locateVariable(tok, scope);
+        }else if (scope == -2){//closest nested
+            symTable.locateVariable(tok);
+        }
+        symTable.assignValue(tok);
     }
 
     private void guarded_command(){
-    	expression();
+        expression();
     	mustbe(TK.THEN);
+        symTable.newScope();
     	block();
+        symTable.endScope();
     }
 
     // is current token what we want?
@@ -212,10 +234,5 @@ public class Parser {
 	System.err.println( "can't parse: line "
 			    + tok.lineNumber + " " + msg );
 	System.exit(1);
-    }
-
-    private void assignment_error() {
-    	System.err.println(temp.string + " is an undeclared variable on line " + tok.lineNumber);
-		System.exit(1);
     }
 }

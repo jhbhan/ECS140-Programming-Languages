@@ -19,8 +19,7 @@ public class SymbolsTable{
 
 	public void insertSymbol(Token tok){
 		if (stackOfTables.elementAt(scopeMarker).contains(tok.string)){
-			System.err.println("redeclaration of variable " + tok.string + 
-                         " --- line " + tok.lineNumber);
+			System.err.println("redeclaration of variable " + tok.string);
 		}else{
 			stackOfTables.elementAt(scopeMarker).add(tok.string);
 		}
@@ -29,9 +28,9 @@ public class SymbolsTable{
   //if already declared, print error message
   //else put symbol into symbol table
 
-	public void assignValue(String key){
-		if (!(stackOfTables.elementAt(scopeMarker).contains(key))){
-			System.err.println("error message");
+	public void assignValue(Token tok){
+		if (!(stackOfTables.elementAt(scopeMarker).contains(tok.string))){
+			System.err.println(tok.string + " is an undeclared variable on line " + tok.lineNumber);
 			System.exit(1);
 		}
 	}
@@ -50,6 +49,34 @@ public class SymbolsTable{
     	scopeMarker--;
     	stackOfTables.pop();
 	}
+
+	//no tilda, recursively find
+	public boolean locateVariable(Token tok){
+		int scope = scopeMarker;
+		while(!stackOfTables.elementAt(scope).contains(tok.string)){
+			scope--;
+			if (scope < 0){
+				return false;
+			}
+		}
+			return true;
+	}
+
+	//tilda id, global, just check scope 0
+	public boolean locateVariableGlobal(Token tok){
+		return stackOfTables.elementAt(0).contains(tok.string);
+	}
+
+	// if ~0. current scope, if ~num: scopenumber scope
+	public boolean locateVariable(Token tok, int scope){
+		if (scope == 0){
+			return stackOfTables.elementAt(scopeMarker).contains(tok.string);
+		}
+		else{
+			return stackOfTables.elementAt(scope).contains(tok.string);
+	}
+	}
+
 	//hash table hash<h,k>
 	//symbols are inputted <name, value>
 	//reads when a new declaration is found

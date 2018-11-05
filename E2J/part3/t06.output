@@ -1,2 +1,3 @@
 running e2j t06
-a is an undeclared variable on line 2
+-2
+*EOF* is an undeclared variable on line 3
