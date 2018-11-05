@@ -4,17 +4,17 @@ import java.util.Set;
 import java.util.Stack;
 
 public class SymbolsTable{
-	public SymbolsTable() {
-		Stack<HashSet> stackOfTables = new Stack<HashSet>();
-		stackOfTables.push(new HashSet<String>());
+	public SymbolsTable();
+		stackOfTables = new Stack<>();
+		stackOfTables.push(new HashSet<>());
 		scopeMarker = 0;
 	}
 
 	private Stack<HashSet<String>> stackOfTables;	//symbolsTable.put("name of whatever", value) to input
 	//symbolsTable.get("name of whatever")
 
-  private int scopeMarker; // this determines the total nested blocks
-  public int getScopeMarker(){ return scopeMarker; }
+  private int scopeMarker; // this determines the total nested blocks  
+  public int getScopeMarker(){ return scopeMarker; } 
   //returns scopeMarker
 
 	public void insertSymbol(Token tok){
@@ -40,7 +40,7 @@ public class SymbolsTable{
   }
 
 	public void newScope(){
-		scopeMarker++;
+		scopeMarker++; 
    		stackOfTables.push(new HashSet());
     }
   //increases depth each time program enters a new scope

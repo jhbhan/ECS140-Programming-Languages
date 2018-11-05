@@ -1,9 +1,1 @@
 running e2j t14
-Exception in thread "main" java.lang.NullPointerException
-	at SymbolsTable.insertSymbol(SymbolsTable.java:21)
-	at Parser.declaration(Parser.java:52)
-	at Parser.declaration_list(Parser.java:44)
-	at Parser.block(Parser.java:34)
-	at Parser.program(Parser.java:30)
-	at Parser.<init>(Parser.java:24)
-	at e2j.main(e2j.java:5)

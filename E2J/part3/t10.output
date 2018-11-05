@@ -1,11 +1,1 @@
 running e2j t10
-Exception in thread "main" java.lang.NullPointerException
-	at SymbolsTable.newScope(SymbolsTable.java:44)
-	at Parser.guarded_command(Parser.java:200)
-	at Parser.tkIf(Parser.java:119)
-	at Parser.statement(Parser.java:93)
-	at Parser.statement_list(Parser.java:63)
-	at Parser.block(Parser.java:35)
-	at Parser.program(Parser.java:30)
-	at Parser.<init>(Parser.java:24)
-	at e2j.main(e2j.java:5)
