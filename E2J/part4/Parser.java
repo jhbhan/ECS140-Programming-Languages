@@ -13,6 +13,11 @@ public class Parser {
     }
     Token temp;
     Token temp2;
+    int assignmentChecker = 0;
+    //if 0, then not assginment, if 1, assginment
+    int ifwhilecheck = 0;
+
+    //if 0, if, if 1, then while
 
     SymbolsTable symTable = new SymbolsTable();
     private Scan scanner;
@@ -26,7 +31,7 @@ public class Parser {
     }
 
     private void program() {
-		System.out.println("public class Mye2j{");
+		System.out.println("public class My_e2j{");
 		System.out.println("public static void main(String[] args){");
 		block();
 		System.out.println("}");
@@ -53,11 +58,13 @@ public class Parser {
 	mustbe(TK.DECLARE);
 	temp = tok;
 	mustbe(TK.ID);
+	System.out.println("int x_" + temp.string + ";");
 	symTable.insertSymbol(temp);
 	while(is(TK.COMMA)){
 	    scan();
 	    temp = tok;
 	    mustbe(TK.ID);
+	    System.out.println("int x_" + temp.string + ";");
 	    symTable.insertSymbol(temp);
 	}
     }
@@ -101,34 +108,43 @@ public class Parser {
     	ref_id();
     	mustbe(TK.ASSIGN);
 		System.out.println("=");
+		assignmentChecker = 1;
     	expression();
+    	assignmentChecker = 0;
     }
 
     private void tkPrint(){
     	mustbe(TK.PRINT);
-		System.out.println("System.out.println\"");
+		System.out.println("System.out.println(");
     	expression();
-		System.out.println("\"");
+		System.out.println(");");
     }
 
     private void tkDo(){
+    	ifwhilecheck = 1;
     	mustbe(TK.DO);
+    	System.out.println("while(");
     	guarded_command();
     	mustbe(TK.ENDDO);
     }
 
     private void tkIf(){
+    	ifwhilecheck = 0;
     	mustbe(TK.IF);
+    	System.out.println("if(");
     	guarded_command();
     	while(is(TK.ELSEIF)){
+    		System.out.println("else if(");
     		scan();
     		guarded_command();
     	}
     	if(is(TK.ELSE)){
+    		System.out.println("else{");
     		scan();
             symTable.newScope();
     		block();
             symTable.endScope();
+            System.out.println("}");
     	}
     	mustbe(TK.ENDIF);
     }
@@ -143,7 +159,8 @@ public class Parser {
 			}
     		scan();
     		term();
-    	}
+    	}if(assignmentChecker == 1){System.out.println(";");}
+
     }
 
     private void term(){
@@ -169,7 +186,15 @@ public class Parser {
     	}else if(isRef_id()){
     		ref_id();
     	}else{
+    		temp = tok;
     		mustbe(TK.NUM);
+    		System.out.println(temp.string);
+
+//    		if(assignmentChecker == 0){
+//    		System.out.println(temp.string);}
+//    		else{
+//    			System.out.println(temp.string);
+//    		}
     	}
     }
 
@@ -191,8 +216,8 @@ public class Parser {
     		}
     	}
         temp = tok;
-
     	mustbe(TK.ID);
+    	System.out.println("x_" + temp.string);
 
         if((symTable.getScopeMarker() - scope) < 0){
                     System.err.println("no such variable ~"  + scope + temp.string + " on line " + temp.lineNumber);
@@ -212,9 +237,15 @@ public class Parser {
     private void guarded_command(){
         expression();
     	mustbe(TK.THEN);
+    	if(ifwhilecheck == 0){
+    	System.out.println("< 0){");
+    	}else{
+    		System.out.println("<= 0){");
+    	}
         symTable.newScope();
     	block();
         symTable.endScope();
+        System.out.println("}");
     }
 
     // is current token what we want?

@@ -1,111 +1,33 @@
 running e2j
 compiling the Java generated code
-My_e2j.java:3: error: illegal start of expression
-=
-^
-My_e2j.java:4: error: illegal start of expression
-=
-^
-My_e2j.java:6: error: illegal start of expression
-=
-^
-My_e2j.java:8: error: illegal start of expression
-=
-^
-My_e2j.java:10: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:11: error: unclosed string literal
-"
-^
-My_e2j.java:12: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:12: error: not a statement
-System.out.println"
-          ^
-My_e2j.java:13: error: unclosed string literal
-"
-^
-My_e2j.java:14: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:14: error: not a statement
-System.out.println"
-          ^
-My_e2j.java:15: error: unclosed string literal
-"
-^
-My_e2j.java:16: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:16: error: not a statement
-System.out.println"
-          ^
-My_e2j.java:19: error: unclosed string literal
-"
-^
-My_e2j.java:20: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:20: error: not a statement
-System.out.println"
-          ^
-My_e2j.java:25: error: unclosed string literal
-"
-^
-My_e2j.java:26: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:26: error: not a statement
-System.out.println"
-          ^
-My_e2j.java:33: error: unclosed string literal
-"
-^
-My_e2j.java:34: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:34: error: not a statement
-System.out.println"
-          ^
-My_e2j.java:41: error: unclosed string literal
-"
-^
-My_e2j.java:44: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:44: error: not a statement
-System.out.println"
-          ^
-My_e2j.java:45: error: unclosed string literal
-"
-^
-My_e2j.java:51: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:51: error: not a statement
-System.out.println"
-          ^
-My_e2j.java:52: error: unclosed string literal
-"
-^
-My_e2j.java:57: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:57: error: not a statement
-System.out.println"
-          ^
-My_e2j.java:58: error: unclosed string literal
-"
-^
-My_e2j.java:59: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:59: error: not a statement
-System.out.println"
-          ^
-My_e2j.java:60: error: unclosed string literal
-"
-^
-36 errors
+executing the My_e2j
+-111
+-44
+-1110
+11
+-5
+7
+-5
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+-1
+55

@@ -1,12 +1,4 @@
 running e2j
 compiling the Java generated code
-My_e2j.java:3: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:3: error: not a statement
-System.out.println"
-          ^
-My_e2j.java:4: error: unclosed string literal
-"
-^
-3 errors
+executing the My_e2j
+2341

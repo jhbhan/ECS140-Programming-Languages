@@ -1,66 +1,12 @@
 running e2j
 compiling the Java generated code
-My_e2j.java:3: error: illegal start of expression
-=
-^
-My_e2j.java:4: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:5: error: unclosed string literal
-"
-^
-My_e2j.java:8: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:8: error: not a statement
-System.out.println"
-          ^
-My_e2j.java:9: error: unclosed string literal
-"
-^
-My_e2j.java:12: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:12: error: not a statement
-System.out.println"
-          ^
-My_e2j.java:13: error: unclosed string literal
-"
-^
-My_e2j.java:16: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:16: error: not a statement
-System.out.println"
-          ^
-My_e2j.java:17: error: unclosed string literal
-"
-^
-My_e2j.java:18: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:18: error: not a statement
-System.out.println"
-          ^
-My_e2j.java:19: error: unclosed string literal
-"
-^
-My_e2j.java:20: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:20: error: not a statement
-System.out.println"
-          ^
-My_e2j.java:21: error: unclosed string literal
-"
-^
-My_e2j.java:22: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:22: error: not a statement
-System.out.println"
-          ^
-My_e2j.java:23: error: unclosed string literal
-"
-^
-21 errors
+My_e2j.java:16: error: variable x_a is already defined in method main(String[])
+int x_a;
+    ^
+My_e2j.java:29: error: variable x_a is already defined in method main(String[])
+int x_a;
+    ^
+My_e2j.java:42: error: variable x_a is already defined in method main(String[])
+int x_a;
+    ^
+3 errors

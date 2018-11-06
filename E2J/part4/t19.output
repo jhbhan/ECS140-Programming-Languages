@@ -1,42 +1,60 @@
 running e2j
 compiling the Java generated code
-My_e2j.java:3: error: illegal start of expression
-=
-^
-My_e2j.java:6: error: illegal start of expression
-=
-^
-My_e2j.java:8: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:9: error: unclosed string literal
-"
-^
-My_e2j.java:17: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:17: error: not a statement
-System.out.println"
-          ^
-My_e2j.java:18: error: unclosed string literal
-"
-^
-My_e2j.java:23: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:23: error: not a statement
-System.out.println"
-          ^
-My_e2j.java:24: error: unclosed string literal
-"
-^
-My_e2j.java:29: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:29: error: not a statement
-System.out.println"
-          ^
-My_e2j.java:30: error: unclosed string literal
-"
-^
-13 errors
+executing the My_e2j
+-5
+-4
+-3
+-2
+-1
+0
+-4
+-3
+-2
+-1
+0
+-3
+-2
+-1
+0
+-2
+-1
+0
+-1
+0
+-50
+-40
+-30
+-20
+-10
+0
+-40
+-30
+-20
+-10
+0
+-30
+-20
+-10
+0
+-20
+-10
+0
+-10
+0
+0
+-4
+-3
+-2
+-1
+0
+-3
+-2
+-1
+0
+-2
+-1
+0
+-1
+0
+0
+9

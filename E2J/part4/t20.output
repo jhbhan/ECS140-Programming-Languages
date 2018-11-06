@@ -2,52 +2,10 @@ running e2j
 redeclaration of variable k
 redeclaration of variable i
 compiling the Java generated code
-My_e2j.java:3: error: illegal start of expression
-=
-^
-My_e2j.java:4: error: illegal start of expression
-=
-^
-My_e2j.java:5: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:6: error: unclosed string literal
-"
-^
-My_e2j.java:11: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:11: error: not a statement
-System.out.println"
-          ^
-My_e2j.java:12: error: unclosed string literal
-"
-^
-My_e2j.java:20: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:20: error: not a statement
-System.out.println"
-          ^
-My_e2j.java:21: error: unclosed string literal
-"
-^
-My_e2j.java:26: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:26: error: not a statement
-System.out.println"
-          ^
-My_e2j.java:27: error: unclosed string literal
-"
-^
-My_e2j.java:32: error: unclosed string literal
-System.out.println"
-                  ^
-My_e2j.java:32: error: not a statement
-System.out.println"
-          ^
-My_e2j.java:33: error: unclosed string literal
-"
-^
-16 errors
+My_e2j.java:7: error: variable x_k is already defined in method main(String[])
+int x_k;
+    ^
+My_e2j.java:9: error: variable x_i is already defined in method main(String[])
+int x_i;
+    ^
+2 errors
