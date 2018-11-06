@@ -16,6 +16,7 @@ public class Parser {
     int assignmentChecker = 0;
     //if 0, then not assginment, if 1, assginment
     int ifwhilecheck = 0;
+    //0 if didn't have tilda, 1 if did have tilda
 
     //if 0, if, if 1, then while
 
@@ -221,7 +222,18 @@ public class Parser {
     	}
         temp = tok;
     	mustbe(TK.ID);
-    	System.out.println("x_" + temp.string + "_" + symTable.locateScope(temp));
+    	if(scope == -2) {
+			System.out.println("x_" + temp.string + "_" + symTable.locateScope(temp));
+		}else if(scope == -1){
+			System.out.println("x_" + temp.string + "_0");
+		}else if(scope == 0){
+			System.out.println("x_" + temp.string + "_" + Integer.toString(symTable.getScopeMarker()));
+		}
+		else{
+			System.out.println("x_" + temp.string + "_" + Integer.toString(symTable.getScopeMarker()-scope));
+		}
+
+
 
         if((symTable.getScopeMarker() - scope) < 0){
                     System.err.println("no such variable ~"  + scope + temp.string + " on line " + temp.lineNumber);
