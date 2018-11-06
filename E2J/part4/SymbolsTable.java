@@ -24,6 +24,9 @@ public class SymbolsTable{
 			stackOfTables.elementAt(scopeMarker).add(tok.string);
 		}
 	}
+	public boolean containsSymbol(Token tok){
+		return stackOfTables.elementAt(scopeMarker).contains(tok.string);
+	}
   //inserts the symbol into the symbol table
   //if already declared, print error message
   //else put symbol into symbol table

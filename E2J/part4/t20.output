@@ -2,10 +2,3 @@ running e2j
 redeclaration of variable k
 redeclaration of variable i
 compiling the Java generated code
-My_e2j.java:7: error: variable x_k is already defined in method main(String[])
-int x_k;
-    ^
-My_e2j.java:9: error: variable x_i is already defined in method main(String[])
-int x_i;
-    ^
-2 errors

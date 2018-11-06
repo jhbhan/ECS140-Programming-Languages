@@ -4,16 +4,9 @@ redeclaration of variable a
 redeclaration of variable a
 redeclaration of variable a
 compiling the Java generated code
-My_e2j.java:4: error: variable x_a is already defined in method main(String[])
-int x_a;
-    ^
-My_e2j.java:5: error: variable x_a is already defined in method main(String[])
-int x_a;
-    ^
-My_e2j.java:6: error: variable x_a is already defined in method main(String[])
-int x_a;
-    ^
-My_e2j.java:7: error: variable x_a is already defined in method main(String[])
-int x_a;
-    ^
-4 errors
+executing the My_e2j
+1998
+3333
+2222
+4444
+7777

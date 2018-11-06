@@ -58,13 +58,17 @@ public class Parser {
 	mustbe(TK.DECLARE);
 	temp = tok;
 	mustbe(TK.ID);
-	System.out.println("int x_" + temp.string + ";");
+	if(!(symTable.containsSymbol(temp))) {
+		System.out.println("int x_" + temp.string + ";");
+	}
 	symTable.insertSymbol(temp);
 	while(is(TK.COMMA)){
 	    scan();
 	    temp = tok;
 	    mustbe(TK.ID);
-	    System.out.println("int x_" + temp.string + ";");
+		if(!(symTable.containsSymbol(temp))) {
+			System.out.println("int x_" + temp.string + ";");
+		}
 	    symTable.insertSymbol(temp);
 	}
     }
@@ -237,11 +241,11 @@ public class Parser {
     private void guarded_command(){
         expression();
     	mustbe(TK.THEN);
-    	if(ifwhilecheck == 0){
-    	System.out.println("< 0){");
-    	}else{
-    		System.out.println("<= 0){");
-    	}
+    	//if(ifwhilecheck == 0){
+    	System.out.println("<= 0){");
+    	//}else{
+    //		System.out.println("<= 0){");
+    //	}
         symTable.newScope();
     	block();
         symTable.endScope();
