@@ -55,11 +55,11 @@ public class Parser {
     }
 
     private void declaration() {
-	mustbe(TK.DECLARE);
-	temp = tok;
-	mustbe(TK.ID);
+		mustbe(TK.DECLARE);
+		temp = tok;
+		mustbe(TK.ID);
 	if(!(symTable.containsSymbol(temp))) {
-		System.out.println("int x_" + temp.string + ";");
+		System.out.println("int x_" + temp.string + "_" + symTable.getScopeMarker() + ";");
 	}
 	symTable.insertSymbol(temp);
 	while(is(TK.COMMA)){
@@ -67,7 +67,7 @@ public class Parser {
 	    temp = tok;
 	    mustbe(TK.ID);
 		if(!(symTable.containsSymbol(temp))) {
-			System.out.println("int x_" + temp.string + ";");
+			System.out.println("int x_" + temp.string + "_" + symTable.getScopeMarker()+ ";");
 		}
 	    symTable.insertSymbol(temp);
 	}
@@ -221,7 +221,7 @@ public class Parser {
     	}
         temp = tok;
     	mustbe(TK.ID);
-    	System.out.println("x_" + temp.string);
+    	System.out.println("x_" + temp.string + "_" + symTable.locateScope(temp));
 
         if((symTable.getScopeMarker() - scope) < 0){
                     System.err.println("no such variable ~"  + scope + temp.string + " on line " + temp.lineNumber);

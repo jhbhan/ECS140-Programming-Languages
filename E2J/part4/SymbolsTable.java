@@ -25,15 +25,7 @@ public class SymbolsTable{
 		}
 	}
 	public boolean containsSymbol(Token tok){
-		int scope = scopeMarker;
-		while(!stackOfTables.elementAt(scope).contains(tok.string)){
-			scope--;
-			if (scope < 0){
-				return false;
-			}
-		}
-			return true;
-	//	return stackOfTables.elementAt(scopeMarker).contains(tok.string);
+		return stackOfTables.elementAt(this.getScopeMarker()).contains(tok.string);
 	}
   //inserts the symbol into the symbol table
   //if already declared, print error message
@@ -75,6 +67,18 @@ public class SymbolsTable{
 			return true;
 	}
 
+	public int locateScope(Token tok){
+		int scope = scopeMarker;
+		while(!stackOfTables.elementAt(scope).contains(tok.string)){
+			scope--;
+			if (scope < 0){
+				System.err.println(tok.string + " is an undeclared variable on line " + tok.lineNumber);
+				System.exit(1);
+			}
+		}
+			return scope;
+	}
+
 	//tilda id, global, just check scope 0
 	public boolean locateVariableGlobal(Token tok){
 
@@ -103,6 +107,7 @@ public class SymbolsTable{
 			}
 		}
 	}
+
 
 	//hash table hash<h,k>
 	//symbols are inputted <name, value>

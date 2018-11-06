@@ -1,60 +1,104 @@
 public class My_e2j{
 public static void main(String[] args){
-int x_a;
-x_a
+int x_bbbb_0;
+x_bbbb_0
 =
-1
+23
+;
+if(
+x_bbbb_0
+<= 0){
+System.out.println(
+x_bbbb_0
+);
+}
+else{
+int x_k_1;
+x_k_1
+=
+999
 ;
 System.out.println(
-x_a
+x_k_1
++
+x_k_1
 );
 if(
-0
--
-1
+x_k_1
 <= 0){
-x_a
+System.out.println(
+1111
+);
+}
+else{
+int x_bbbb_2;
+x_bbbb_2
 =
-2
+8888
+;
+x_bbbb_2
+=
+44
 ;
 System.out.println(
-x_a
+x_bbbb_2
 );
-if(
-0
--
-1
-<= 0){
-x_a
+x_bbbb_2
 =
-3
+11
+;
+x_bbbb_2
+=
+x_bbbb_2
++
+10000
+;
+while(
+x_bbbb_2
+-
+22
+<= 0){
+int x_bbbb_3;
+x_bbbb_3
+=
+77
 ;
 System.out.println(
-x_a
+x_bbbb_3
 );
-if(
-0
--
-1
-<= 0){
-x_a
+System.out.println(
+x_bbbb_3
+);
+x_bbbb_3
 =
-4
+x_bbbb_3
++
+1
 ;
 System.out.println(
-x_a
+x_k_1
 );
 }
+x_k_1
+=
+x_k_1
++
+1
+;
+x_bbbb_2
+=
+x_bbbb_2
++
+100
+;
 System.out.println(
-x_a
+x_bbbb_2
 );
-}
 System.out.println(
-x_a
+x_bbbb_2
 );
-}
 System.out.println(
-x_a
+x_bbbb_2
 );
-}
-}
+System.out.println(
+x_bbbb_2

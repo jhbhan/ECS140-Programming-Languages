@@ -1,9 +1,17 @@
 running e2j
 compiling the Java generated code
-My_e2j.java:16: error: variable x_a is already defined in method main(String[])
-int x_a;
-    ^
-My_e2j.java:34: error: variable x_a is already defined in method main(String[])
-int x_a;
-    ^
-2 errors
+executing the My_e2j
+1998
+44
+10112
+10112
+10112
+10112
+10112
+999
+999
+999
+999
+23
+23
+23
