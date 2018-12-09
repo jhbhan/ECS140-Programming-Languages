@@ -9,3 +9,8 @@ same_element([],[]).
 same_element([H1|T1],L1) :- same_element(T1,L2),help(H,T,L2).
 help(H, [H|T],T).
 help(H,[X|T1],[X|T2]) :- help(H,T1,T2).
+same([],[]).
+same(L1,L2) :- help (L1,L2,[]).
+help([H|T],[],L3) :-  same(T,L3).
+help([H|T1],[H|T2],L) :- help([H|T1],T2,L).
+help([H1|T1],[H2|T2],L) :-help([H|T1],T2,[H2|L]).
